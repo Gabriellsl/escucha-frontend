@@ -40,8 +40,7 @@ export class SubmitAudioComponent implements OnInit {
     }
   }
 
-  onSubmit() {  
-
+  onSubmit() {
       this.uploadAudioService.uploadAudio(this.uploadAudioFile);
 
   }
@@ -50,8 +49,12 @@ export class SubmitAudioComponent implements OnInit {
 
     //this.costService.getTotalCost().subscribe;
     this.router.navigate(['appropriate']);
+    this.costService.getTotalCost().subscribe(x =>{
+      console.log(x);
+    });
+
   }
 
 
-  
+
 }

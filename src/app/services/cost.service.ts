@@ -21,7 +21,7 @@ export class CostService {
       }
     }
 
-     return this.http.get<Cost>('http://192.168.137.1:3000/mycost', options);
+     return this.http.get<Cost>('http://localhost:3000/mycost', options);
   }
 
 }
