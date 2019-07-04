@@ -4,13 +4,28 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import {ButtonModule} from 'primeng/button';
+import { AppropriateComponent } from './pages/appropriate/appropriate.component';
+import { InappropriateComponent } from './pages/inappropriate/inappropriate.component';
+import { CostComponent } from './pages/cost/cost.component';
+import { SubmitAudioComponent } from './pages/submit-audio/submit-audio.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AppropriateComponent,
+    InappropriateComponent,
+    CostComponent,
+    SubmitAudioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
