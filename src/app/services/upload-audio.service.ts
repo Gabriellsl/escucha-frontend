@@ -8,6 +8,8 @@ import defaultToken from '../defaultToken';
 })
 export class UploadAudioService {
 
+  dadosAPI;
+
   constructor(private http: HttpClient) { }
 
   uploadAudio(uploadAudioFile: File){
@@ -25,11 +27,9 @@ export class UploadAudioService {
       }
     }
 
-    this.http.post<Analyzer>('http://localhost:3000/upload', file, options)
-    .subscribe(res => {
-       console.log(res);
-     // res.result? res.result:"sssssss"; // <<< navigate com params....
-    });
+    return this.http.post<Analyzer>('http://localhost:3000/upload', file, options);
   }
+
+
 
 }

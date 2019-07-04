@@ -1,3 +1,4 @@
+import { Analyzer } from './../../models/Interfaces';
 import { CostService } from './../../services/cost.service';
 import { UploadAudioService } from './../../services/upload-audio.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,6 +15,7 @@ export class SubmitAudioComponent implements OnInit {
   uploadAudioFile: File = null;
   audioPreview: string;
   loaded: boolean;
+  audioResult: Analyzer;
 
   constructor(private router: Router, private uploadAudioService: UploadAudioService, private costService: CostService) { }
 
@@ -41,8 +43,8 @@ export class SubmitAudioComponent implements OnInit {
   }
 
   onSubmit() {
-      this.uploadAudioService.uploadAudio(this.uploadAudioFile);
-
+      this.uploadAudioService.uploadAudio(this.uploadAudioFile).subscribe(dados => {this.audioResult = dados;});
+      console.log(this.audioResult);
   }
 
   getTotalCost(){
