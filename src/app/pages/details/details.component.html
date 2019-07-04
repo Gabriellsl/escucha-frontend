@@ -10,6 +10,7 @@
 
       <div class="detailsGroup">
         <ul class="list-group list-group-horizontal-lg ">
+            <!-- <li *ngFor="let item of audioResult.result"  class="resulDetails list-group-item">{{item.category}}: Matar</li> -->
           <li class="resulDetailsDescr list-group-item">Categorias e palavras possívelmente indesejadas</li>
           <li class="resulDetails list-group-item">Agressivo: Matar</li>
           <li class="resulDetails list-group-item">Agressivo: Matar</li>
@@ -24,6 +25,8 @@
           <li class="resulDetails list-group-item">Agressivo: Matar</li>
         </ul>
       </div>
+
+      <button [routerLink]="['/']" type="button" class="btn btn-danger btn-lg initialButton">Menu</button>
 
 
 

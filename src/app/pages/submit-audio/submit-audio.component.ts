@@ -16,6 +16,7 @@ export class SubmitAudioComponent implements OnInit {
   audioPreview: string;
   loaded: boolean;
   audioResult: Analyzer;
+  cost: Cost = {user:"",length:0,cost:0};
 
   constructor(private router: Router, private uploadAudioService: UploadAudioService, private costService: CostService) { }
 
@@ -43,14 +44,21 @@ export class SubmitAudioComponent implements OnInit {
   }
 
   async onSubmit() {
-      const x:Analyzer = await this.uploadAudioService.uploadAudio(this.uploadAudioFile).toPromise();
+      this.audioResult = await this.uploadAudioService.uploadAudio(this.uploadAudioFile).toPromise();
+      console.log(this.audioResult);
+      if(this.audioResult.result[0]){
+        this.router.navigate(['inappropriate'],{state:{audioResult:this.audioResult}});
+      }else{
+        this.router.navigate(['appropriate']);
+      }
+      
   }
 
   async getTotalCost(){
 
     //this.costService.getTotalCost().subscribe;
-    this.router.navigate(['appropriate']);
-    const cost:Cost = await this.costService.getTotalCost().toPromise();
+    this.router.navigate(['cost']);
+    
 
   }
 

@@ -1,5 +1,7 @@
+import { Analyzer } from './../../models/Interfaces';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-inappropriate',
@@ -8,13 +10,19 @@ import { Router } from '@angular/router';
 })
 export class InappropriateComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  audioResult: Analyzer;
+  constructor(private router: Router) {
+    //const nav = this.router.getCurrentNavigation();
+    //this.audioResult = nav.extras.state.audioResult;
+    //console.log(this.audioResult);
+   }
 
-  ngOnInit() {
+   async ngOnInit() {
+     this.audioResult = await history.state.audioResult;
   }
 
   showDetails(){
-    this.router.navigate(["details"]);
+    this.router.navigate(['details'],{state:{audioResult:this.audioResult}});
   }
 
 }

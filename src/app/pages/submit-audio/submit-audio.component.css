@@ -1,7 +1,8 @@
 .home{
     height: 100vh;
     padding: 0;
-    background-color: slategrey;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.1), rgba(255,255,255,.4), rgba(255,255,255,0), rgba(255,255,255,.4));
+    background-color: rgb(231, 238, 253);
 }
 
 .lineHome{
@@ -25,7 +26,7 @@
     font-family: 'Rancho', serif;
     text-shadow: 4px 4px 4px #aaa;
     font-size: 3em;
-    color: rgb(176, 250, 250);
+    color: #2994b2;
 }
 
 .initialButton{

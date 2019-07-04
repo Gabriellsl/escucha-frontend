@@ -1,5 +1,6 @@
-import { Car } from './../../models/Interfaces';
+import { Analyzer, Category } from './../../models/Interfaces';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -8,28 +9,92 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
   
-  cars: Car[];
-  // car: Car;
-  // contentOrderBy;
-  
-
-  constructor() {
-
-    this.cars = [
-      {vin:"a",year:"d"},
-      {vin:"b",year:"c"},
-      {vin:"c",year:"b"},
-      {vin:"d",year:"a"},
-
-    ]
-
-    console.log(this.cars);
-   }
-
-
-
-
-  ngOnInit() {
+  audioResult: Analyzer;
+  detect: Category;
+  categorys: Category[]; 
+  constructor(private router: Router) {
+    
   }
+
+  async ngOnInit() {
+    
+    var words: string[];   
+    // this.detect;
+
+     this.audioResult = await history.state.audioResult;
+    // console.log(this.audioResult);
+    // let detecte: Category;
+    // let detectes: Category[];
+    // this.audioResult.result.forEach(function (value){
+      
+    //   console.log(value);
+    //   detecte.category = value.category;
+
+    //   value.words.forEach(function(word){
+    //       detectes.push(detecte = {category:value.category,word:word});
+    //       console.log(word);
+    //   }
+
+    //   )
+      
+      
+    // });
+    // console.log(detectes);
+
+
+
+
+
+
+
+// this.audioResult.result.forEach(function (value){
+      
+
+//        console.log(value);
+//        console.log(value.category);
+       
+
+//        value.words.forEach(function(word){
+//          console.log(word);
+         
+         
+//          //dect.category = value.category;
+//          //dect.word = word;
+//          //detecteds.push(dect);
+//        }
+
+//        );
+
+// });
+    
+    this.loadWords();
+
+}
+
+  loadWords(){
+      console.log("te salvei");
+      
+      this.audioResult.result.forEach(function (value){
+      
+
+       console.log(value);
+       console.log(value.category);
+       
+
+       value.words.forEach(function(word){
+         console.log(word);
+         
+         
+         //dect.category = value.category;
+         //dect.word = word;
+         //detecteds.push(dect);
+       }
+
+       );
+
+});
+
+  }
+
 
 }

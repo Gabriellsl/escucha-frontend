@@ -1,0 +1,70 @@
+.home{
+    height: 100vh;
+    padding: 0;
+    /* background-color: rgb(86, 235, 94); */
+    background-image: linear-gradient(to bottom, transparent, rgba(86, 235, 94,250));
+
+    background-color:rgb(178, 233, 190);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,.1), rgba(255,255,255,.4), rgba(255,255,255,0), rgba(255,255,255,.4));
+}
+
+.lineHome{
+    width: 100%;
+    height: 100%;
+    margin:0;
+}
+.myAutoAllign{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.logo{
+    width: 40vw;
+    max-width: 150px;
+    margin-bottom: 10vh;
+}
+
+
+.textName{
+    font-family: 'Rancho', serif;
+    text-shadow: 4px 4px 4px rgb(3, 3, 3);
+    font-size: 2.5em;
+    color: white; 
+    margin-bottom: 10px;
+}
+
+.initialButton{
+    width: 50vw;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    background-color: #32bea6;
+    color: white;
+}
+
+.initialButton:hover{
+    transform:scale(1.05);
+    transition-duration: 1s;
+}
+
+input[type='file']{
+    display: none;
+}
+
+
+.labelInput:hover{
+    
+    cursor: pointer;
+
+    transform:scale(1.2);
+    transition-duration: 1s;
+}
+
+.uploadImage{
+    width: 70px;
+}
+
+.audioName{
+    color: white;
+    display: inline;
+    margin-left: 5px;
+}

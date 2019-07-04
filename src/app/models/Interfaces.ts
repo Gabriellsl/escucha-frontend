@@ -5,23 +5,22 @@ export interface UseApi {
 
 export interface Cost {
     user: String,
-    lenght: number;
+    length: number;
     cost: number;
 }
 
-export interface Analyzer{
+export interface Analyzer {
     recognized_phrase: string,
     result: [
         {
-            category: {
-                name: string;
-                words: [string];
-            }
+            category: string; 
+            words: [string];
+            
         }
     ]
 }
 
-export interface Car {
-    vin:string;
-    year:string;
+export interface Category {
+    category: string; 
+    word: string;
 }

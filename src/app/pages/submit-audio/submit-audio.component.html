@@ -14,7 +14,7 @@
         <input id="inputAudio" type="file" #audioPicker accept="audio/*" (change)="onAudioPicked($event)" multiple>
         <h5 class="audioName" *ngIf="uploadAudioFile != null" >{{uploadAudioFile.name}}</h5>
       </div>
-      <button type="button" (click)="onSubmit()" class="btn btn-danger btn-lg initialButton">Escanear Audio</button>
+      <button *ngIf="uploadAudioFile != null" type="button" (click)="onSubmit()" class="btn btn-danger btn-lg initialButton">Escanear Audio</button>
       <!-- <button type="button" class="btn btn-success btn-lg initialButton">Submeter Audio</button> -->
       <button (click)="getTotalCost()"  type="button" class="btn btn-success btn-lg initialButton">Visualizar custos</button>
 
