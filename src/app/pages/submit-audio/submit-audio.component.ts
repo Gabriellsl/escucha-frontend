@@ -48,8 +48,8 @@ export class SubmitAudioComponent implements OnInit {
 
   getTotalCost(){
 
-    this.costService.getTotalCost().subscribe;
-
+    //this.costService.getTotalCost().subscribe;
+    this.router.navigate(['appropriate']);
   }
 
 

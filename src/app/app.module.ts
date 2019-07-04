@@ -11,6 +11,8 @@ import { CostComponent } from './pages/cost/cost.component';
 import { SubmitAudioComponent } from './pages/submit-audio/submit-audio.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { DetailsComponent } from './pages/details/details.component';
+
 
 
 @NgModule({
@@ -19,13 +21,15 @@ import { HttpClientModule } from '@angular/common/http';
     AppropriateComponent,
     InappropriateComponent,
     CostComponent,
-    SubmitAudioComponent
+    SubmitAudioComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

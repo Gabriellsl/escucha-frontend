@@ -20,3 +20,8 @@ export interface Analyzer{
         }
     ]
 }
+
+export interface Car {
+    vin:string;
+    year:string;
+}
