@@ -40,18 +40,19 @@ export class SubmitAudioComponent implements OnInit {
     }
   }
 
-  onSubmit() {  
-
+  onSubmit() {
       this.uploadAudioService.uploadAudio(this.uploadAudioFile);
 
   }
 
   getTotalCost(){
 
-    this.costService.getTotalCost().subscribe;
+    this.costService.getTotalCost().subscribe(x =>{
+      console.log(x);
+    });
 
   }
 
 
-  
+
 }
